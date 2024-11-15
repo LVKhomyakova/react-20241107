@@ -3,8 +3,8 @@ import { Footer } from "./footer/Footer.jsx";
 import { Content } from "./content/Content.jsx";
 
 export const Layout = () => {
-  console.log('Layout');
-  return (<>
+  return (
+    <>
       <Header/>
       <Content/>
       <Footer/>
