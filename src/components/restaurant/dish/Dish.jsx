@@ -1,4 +1,4 @@
-import { Counter } from "../../counter/Counter.jsx";
+import { DishCounter } from "../dish-counter/DishCounter.jsx";
 
 export const Dish = ({dish}) => {
   return (
@@ -6,7 +6,7 @@ export const Dish = ({dish}) => {
       <span>{dish.name} </span>
       <span>({dish.ingredients.length && dish.ingredients.join(', ')})</span>
       <span style={{color: 'green'}}> - {dish.price}$</span>
-      <Counter/>
+      <DishCounter/>
     </>
   );
 }
