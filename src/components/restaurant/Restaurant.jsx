@@ -1,6 +1,7 @@
 import { Dish } from "./dish/Dish.jsx";
 import { NoData } from "../no-data/NoData.jsx";
 import { Review } from "./review/Review.jsx";
+import { ReviewForm } from "./review-form/ReviewForm.jsx";
 
 export const Restaurant = ({restaurant}) => {
   return (
@@ -18,6 +19,10 @@ export const Restaurant = ({restaurant}) => {
         ? <ul>{restaurant.reviews.map((review) => (<li key={review.id}><Review review={review}/></li>))}</ul>
         : <NoData/>
       }
+
+      <hr/>
+      <ReviewForm/>
+      <hr/>
     </section>
   )
 }
