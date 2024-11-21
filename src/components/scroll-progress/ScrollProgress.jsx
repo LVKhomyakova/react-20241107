@@ -9,7 +9,7 @@ export const ScrollProgress = () => {
       setValue(position);
     };
     document.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => document.removeEventListener("scroll", handleScroll);
   }, []);
 
 
