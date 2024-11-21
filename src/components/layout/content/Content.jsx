@@ -26,6 +26,9 @@ export const Content = () => {
         )}
       </nav>
       {currRestaurant ? <Restaurant restaurant={currRestaurant}/> : <NoData/>}
+      {currRestaurant ? <Restaurant restaurant={currRestaurant}/> : <NoData/>}
+      {currRestaurant ? <Restaurant restaurant={currRestaurant}/> : <NoData/>}
+      {currRestaurant ? <Restaurant restaurant={currRestaurant}/> : <NoData/>}
     </main>
   );
 }
