@@ -4,14 +4,14 @@ export const ScrollProgress = () => {
   const [value, setValue] = useState(0);
 
   useEffect(() => {
+    const handleScroll = () => {
+      const position = (document.documentElement.scrollTop * 100) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+      setValue(position);
+    };
     document.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleScroll = () => {
-    const position = (document.documentElement.scrollTop * 100) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-    setValue(position);
-  };
 
   return (
     <div style={{ width: '100%', height: '20px', position: 'fixed', top: 0 }}>
