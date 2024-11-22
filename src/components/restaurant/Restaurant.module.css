@@ -1,0 +1,17 @@
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  margin-bottom: 40px;
+}
+
+.reviews {
+  display: flex;
+  column-gap: 20px;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.form {
+  padding: 20px;
+  margin-bottom: 40px;
+}

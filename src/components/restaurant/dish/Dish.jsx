@@ -1,12 +1,19 @@
 import { DishCounter } from "../dish-counter/DishCounter.jsx";
+import classes from "./Dish.module.css";
+import { Text } from "../../text/Text.jsx";
 
 export const Dish = ({dish}) => {
   return (
-    <>
-      <span>{dish.name} </span>
-      <span>({dish.ingredients.length && dish.ingredients.join(', ')})</span>
-      <span style={{color: 'green'}}> - {dish.price}$</span>
-      <DishCounter/>
-    </>
+    <div className={classes.dish}>
+      <div className={classes.block}>
+        <Text type="subtitle" color="dark">{dish.name}</Text>
+        <Text type="subtitle" color="primary">{dish.price}$</Text>
+      </div>
+
+      <div className={classes.block}>
+        <Text>({dish.ingredients.length && dish.ingredients.join(', ')})</Text>
+        <DishCounter/>
+      </div>
+    </div>
   );
 }

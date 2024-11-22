@@ -1,0 +1,11 @@
+.bar {
+  width: 100%;
+  height: 10px;
+  position: fixed;
+  top: 0;
+}
+
+.bar .progress {
+  height: 100%;
+  background-color: var(--primary-color);
+}

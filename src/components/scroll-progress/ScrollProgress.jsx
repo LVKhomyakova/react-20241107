@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import classes from './ScrollProgress.module.css'
 
 export const ScrollProgress = () => {
   const [value, setValue] = useState(0);
@@ -14,8 +15,8 @@ export const ScrollProgress = () => {
 
 
   return (
-    <div style={{ width: '100%', height: '20px', position: 'fixed', top: 0 }}>
-      <div style={{width: value + '%', height: '100%', backgroundColor: 'red'}}></div>
+    <div className={classes.bar}>
+      <div className={classes.progress} style={{width: value + '%'}}></div>
     </div>
   );
 }

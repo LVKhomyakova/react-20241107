@@ -2,27 +2,30 @@ import { Dish } from "./dish/Dish.jsx";
 import { NoData } from "../no-data/NoData.jsx";
 import { Review } from "./review/Review.jsx";
 import { ReviewForm } from "./review-form/ReviewForm.jsx";
+import { Text } from "../text/Text.jsx";
+import classes from "./Restaurant.module.css"
 
 export const Restaurant = ({restaurant}) => {
   return (
-    <section>
+    <section className={classes.restaurant}>
       <h2>{restaurant.name}</h2>
 
-      <h3>Меню</h3>
+      <Text type="title" color="primary">Меню</Text>
       {restaurant.menu?.length
-        ? <ul>{restaurant.menu.map((dish) => (<li key={dish.id}><Dish dish={dish}/></li>))}</ul>
+        ? <div className={classes.menu}>{restaurant.menu.map((dish) => (<Dish key={dish.id} dish={dish}/>))}</div>
         : <NoData/>
       }
 
-      <h3>Отзывы</h3>
+      <Text type="title" color="primary">Отзывы</Text>
       {restaurant.reviews?.length
-        ? <ul>{restaurant.reviews.map((review) => (<li key={review.id}><Review review={review}/></li>))}</ul>
+        ? <div className={classes.reviews}>{restaurant.reviews.map((review) => (<Review key={review.id} review={review}/>))}</div>
         : <NoData/>
       }
 
-      <hr/>
-      <ReviewForm/>
-      <hr/>
+      <Text type="title" color="primary">Оставьте отзыв</Text>
+      <div className={classes.form}>
+        <ReviewForm/>
+      </div>
     </section>
   )
 }

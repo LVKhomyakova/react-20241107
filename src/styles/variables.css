@@ -1,0 +1,14 @@
+:root {
+  --primary-color: #D4A762;
+  --secondary-color: #9A9A9A;
+
+  --gray-color:#9A9A9A;
+  --dark-color: #050709;
+  --light-color: #fffcf8;
+
+  --bg-primary-color: #FFFCF8;
+  --bg-secondary-color: #FFFFFF;
+
+  --primary-font-family: 'Open Sans';
+  --secondary-font-family: 'Playball', cursive;
+}
