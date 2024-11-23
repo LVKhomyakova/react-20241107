@@ -1,6 +1,6 @@
 import { DishCounter } from "../dish-counter/DishCounter.jsx";
 import classes from "./Dish.module.css";
-import { Text } from "../../text/Text.jsx";
+import { Text } from "../../ui/text/Text.jsx";
 
 export const Dish = ({dish}) => {
   return (

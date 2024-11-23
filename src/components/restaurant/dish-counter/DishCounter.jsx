@@ -1,4 +1,4 @@
-import { Counter } from "../../counter/Counter.jsx";
+import { Counter } from "../../ui/counter/Counter.jsx";
 import { useDishCounter } from "./useDishCounter.jsx";
 
 export const DishCounter = ({value = 0}) => {

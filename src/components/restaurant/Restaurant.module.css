@@ -1,17 +1,19 @@
+.wrapper {
+  padding: 20px 0;
+  background-color: transparent;
+}
+.wrapper.primary {
+  background-color: var(--bg-primary-color);
+}
+
 .menu {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
-  margin-bottom: 40px;
 }
 
 .reviews {
   display: flex;
   column-gap: 20px;
-  padding: 20px;
-  margin-bottom: 40px;
-}
-
-.form {
   padding: 20px;
   margin-bottom: 40px;
 }

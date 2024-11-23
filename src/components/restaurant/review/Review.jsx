@@ -1,4 +1,4 @@
-import { Text } from "../../text/Text.jsx";
+import { Text } from "../../ui/text/Text.jsx";
 import classes from './Review.module.css';
 
 export const Review = ({review}) => {

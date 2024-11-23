@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Restaurant } from "../../restaurant/Restaurant.jsx";
 import { RESTAURANTS } from "../../../constants/mock.js";
-import { NoData } from "../../no-data/NoData.jsx";
+import { NoData } from "../../ui/no-data/NoData.jsx";
 import { Nav } from "../nav/Nav.jsx";
-import classes from "./Content.module.css"
 
 export const Content = () => {
   const [currRestaurant, setCurrRestaurant] = useState(RESTAURANTS[0]);
@@ -15,7 +14,7 @@ export const Content = () => {
   }
 
   return (
-    <main className="container">
+    <main>
       <Nav currRestaurant={currRestaurant} handleMenuClick={handleMenuClick} />
       {currRestaurant ? <Restaurant key={currRestaurant.id} restaurant={currRestaurant}/> : <NoData/>}
     </main>

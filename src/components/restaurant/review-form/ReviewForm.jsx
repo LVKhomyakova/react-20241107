@@ -1,35 +1,44 @@
 import { useReviewForm } from "./useReviewForm.jsx";
-import { Counter } from "../../counter/Counter.jsx";
+import { Counter } from "../../ui/counter/Counter.jsx";
+import { Button } from "../../ui/button/Button.jsx";
+import { Input } from "../../ui/input/Input.jsx";
+import classes from "./ReviewForm.module.css";
 
 export const ReviewForm = () => {
   const {state, setName, setText, setRating, resetForm} = useReviewForm();
 
   return (
-    <form>
-      <div>
-        <label htmlFor="name">Имя:</label>
-        <input
-          id="name"
-          type="text"
-          value={state.name}
-          onChange={e => setName(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="text">Текст отзыва:</label>
-        <input
-          id="text"
-          type="text"
-          value={state.text}
-          onChange={e => setText(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="rating">Оценка:</label>
-        <Counter value={state.rating} onChange={setRating}/>
+    <form className={classes.form}>
+      <div className={classes.group}>
+        <div className={classes.control}>
+          <label htmlFor="name">Имя:</label>
+          <Input
+            id="name"
+            type="text"
+            value={state.name}
+            onChange={e => setName(e.target.value)}
+          />
+        </div>
+
+        <div className={classes.control}>
+          <label htmlFor="text">Текст отзыва:</label>
+          <Input
+            id="text"
+            type="textarea"
+            value={state.text}
+            onChange={e => setText(e.target.value)}
+          />
+        </div>
+
+        <div className={classes.control}>
+          <label htmlFor="rating">Оценка:</label>
+          <Counter value={state.rating} onChange={setRating}/>
+        </div>
       </div>
 
-      <button type="button" onClick={resetForm}>Очистить</button>
+      <div>
+        <Button onClick={resetForm}>Очистить</Button>
+      </div>
     </form>
   )
 }
