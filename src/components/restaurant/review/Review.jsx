@@ -6,7 +6,6 @@ export const Review = ({review}) => {
     <div className={classes.review}>
       <div>
         <Text type="subtitle" color="dark">{review.user}</Text>
-
       </div>
 
       <div>

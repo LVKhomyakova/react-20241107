@@ -3,8 +3,8 @@ import { NoData } from "../ui/no-data/NoData.jsx";
 import { Review } from "./review/Review.jsx";
 import { ReviewForm } from "./review-form/ReviewForm.jsx";
 import { Text } from "../ui/text/Text.jsx";
-import classes from "./Restaurant.module.css"
 import classNames from "classnames";
+import classes from "./Restaurant.module.css"
 
 export const Restaurant = ({restaurant}) => {
   return (
