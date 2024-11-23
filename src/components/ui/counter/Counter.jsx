@@ -1,5 +1,4 @@
 import classes from './Counter.module.css';
-import { Text } from "../text/Text.jsx";
 
 export const Counter = ({value, onChange}) => {
   const decrease = () => {
