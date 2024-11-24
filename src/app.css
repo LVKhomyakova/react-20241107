@@ -1,5 +1,4 @@
 @import './styles/font.css';
-@import './styles/typography.css';
 @import './styles/variables.css';
 
 *, *::before, *::after {
@@ -20,11 +19,4 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  max-width: 1200px;
-  margin: 0 auto;
 }

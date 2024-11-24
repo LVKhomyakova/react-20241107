@@ -3,6 +3,7 @@ import { NoData } from "../ui/no-data/NoData.jsx";
 import { Review } from "./review/Review.jsx";
 import { ReviewForm } from "./review-form/ReviewForm.jsx";
 import { Text } from "../ui/text/Text.jsx";
+import { Container } from "../ui/container/Container.jsx";
 import classNames from "classnames";
 import classes from "./Restaurant.module.css"
 
@@ -10,35 +11,37 @@ export const Restaurant = ({restaurant}) => {
   return (
     <>
       <section className={classNames(classes.wrapper, classes.primary)}>
-        <h2>{restaurant.name}</h2>
+        <Container>
+          <Text type="h2">{restaurant.name}</Text>
+        </Container>
       </section>
 
       <section className={classes.wrapper}>
-        <div className="container">
+        <Container>
           <Text type="title" color="primary">Меню</Text>
           {restaurant.menu?.length
             ? <div className={classes.menu}>{restaurant.menu.map((dish) => (<Dish key={dish.id} dish={dish}/>))}</div>
             : <NoData/>
           }
-        </div>
+        </Container>
       </section>
 
       <section className={classes.wrapper}>
-        <div className="container">
+        <Container>
           <Text type="title" color="primary">Отзывы</Text>
           {restaurant.reviews?.length
             ? <div className={classes.reviews}>{restaurant.reviews.map((review) => (
               <Review key={review.id} review={review}/>))}</div>
             : <NoData/>
           }
-        </div>
+        </Container>
       </section>
 
       <section className={classNames(classes.wrapper, classes.primary)}>
-        <div className="container">
+        <Container>
           <Text type="title" color="primary">Оставьте отзыв</Text>
           <ReviewForm/>
-        </div>
+        </Container>
       </section>
     </>
   )

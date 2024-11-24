@@ -1,11 +1,13 @@
+import { Container } from "../../ui/container/Container.jsx";
 import classes from './Header.module.css'
+import { Text } from "../../ui/text/Text.jsx";
 
 export const Header = () => {
   return (
     <header className={classes.header}>
-      <div className="container">
-        <h1>Restaurant service</h1>
-      </div>
+      <Container>
+        <Text type="h1">Restaurant service</Text>
+      </Container>
     </header>
   )
 }
