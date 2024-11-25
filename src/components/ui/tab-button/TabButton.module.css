@@ -1,0 +1,14 @@
+.tab {
+  width: 150px;
+  border: 1px solid var(--primary-color);
+  border-radius: 50rem;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  cursor: pointer;
+  margin: 0 .5rem;
+  padding: .5rem 0;
+}
+
+.tab.active {
+  background-color: #d4a762;
+}

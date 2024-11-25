@@ -1,0 +1,15 @@
+.form {
+  padding: 20px;
+}
+
+.form .group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form .group .control {
+  display: flex;
+  flex-direction: column;
+}

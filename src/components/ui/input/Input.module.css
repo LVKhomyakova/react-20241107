@@ -1,0 +1,24 @@
+input.input,
+textarea.input {
+  padding: .5rem;
+  width: 100%;
+  min-width: 300px;
+  max-width: 50%;
+
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--gray-color);
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid var(--primary-color);
+  appearance: none;
+  border-radius: 8px;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+input.input:focus,
+textarea.input:focus {
+  outline: 0;
+  box-shadow: 0 0 0 .25rem rgba(212, 167, 98, .25);
+}

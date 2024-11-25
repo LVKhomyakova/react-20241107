@@ -1,0 +1,47 @@
+.gray{
+  color: var(--gray-color);
+}
+.dark {
+  color: var(--dark-color);
+}
+.light{
+  color: var(--light-color);
+}
+
+.primary {
+  color: var(--primary-color);
+}
+
+.default {
+  font-size: 1rem;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.h1, .h2, .h3 {
+  text-align: center;
+  font-weight: 400;
+  font-family: 'Playball', cursive;
+  color: var(--dark-color);
+  margin: 0;
+}
+
+.h1 {
+  font-size: 60px;
+  color: var(--primary-color);
+}
+.h2 {
+  font-size: 48px;
+}
+.h3 {
+  font-size: 24px;
+}

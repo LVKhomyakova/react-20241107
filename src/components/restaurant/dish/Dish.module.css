@@ -1,0 +1,15 @@
+.dish {
+  padding: 20px;
+}
+
+.dish .block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dish .block:first-child {
+  border-bottom: 1px dashed var(--primary-color);
+  margin-bottom: 5px;
+  font-size: 24px;
+}
+

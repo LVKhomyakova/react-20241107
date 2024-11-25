@@ -1,0 +1,21 @@
+.counter {
+  border: 1px solid var(--primary-color);
+  border-radius: 50rem;
+  display: flex;
+  width: 80px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.counter button {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  padding: 0 10px;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1;
+}
