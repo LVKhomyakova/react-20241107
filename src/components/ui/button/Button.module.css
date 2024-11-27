@@ -4,17 +4,27 @@
   border: none;
   outline: none;
   border-radius: 50rem;
-  padding: 1rem 3rem;
+  padding: 0.5rem 1rem;
   color: var(--dark-color);
   background-color: var(--primary-color);
   cursor: pointer;
 }
-
 .button:hover {
   background-color: var(--dark-color);
   color: var(--primary-color);
 }
-
 .button:focus {
   box-shadow: 0 0 0 .25rem rgba(180, 142, 83, .5);
+}
+
+.button.dark {
+  color: var(--light-color);
+  background-color: var(--dark-color);
+}
+.button.dark:hover {
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+}
+.button.dark:focus {
+  box-shadow: 0 0 0 .25rem rgba(51, 48, 48, 0.5);
 }

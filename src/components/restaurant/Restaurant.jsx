@@ -6,8 +6,12 @@ import { Text } from "../ui/text/Text.jsx";
 import { Container } from "../ui/container/Container.jsx";
 import classNames from "classnames";
 import classes from "./Restaurant.module.css"
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/auth-context/auth-context.jsx";
 
 export const Restaurant = ({restaurant}) => {
+  const { isLoggedIn} = useContext(AuthContext);
+
   return (
     <>
       <section className={classNames(classes.wrapper, classes.primary)}>
@@ -37,12 +41,14 @@ export const Restaurant = ({restaurant}) => {
         </Container>
       </section>
 
-      <section className={classNames(classes.wrapper, classes.primary)}>
-        <Container>
-          <Text type="title" color="primary">Оставьте отзыв</Text>
-          <ReviewForm/>
-        </Container>
-      </section>
+      {isLoggedIn &&
+        <section className={classNames(classes.wrapper, classes.primary)}>
+          <Container>
+            <Text type="title" color="primary">Оставьте отзыв</Text>
+            <ReviewForm/>
+          </Container>
+        </section>
+      }
     </>
   )
 }

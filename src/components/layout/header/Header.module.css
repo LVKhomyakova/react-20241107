@@ -1,8 +1,16 @@
-header.header {
+.headerWrapper {
   background-color: var(--bg-primary-color);
   border-bottom: 1px solid rgba(0, 0, 0, .05);
   padding: 20px 0;
   font-family: var(--secondary-font-family), cursive;
   font-size: 20px;
   color: var(--dark-color);
+}
+
+.header,
+.headerActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 10px;
 }
