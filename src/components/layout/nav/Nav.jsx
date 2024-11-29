@@ -1,21 +1,13 @@
-import { RESTAURANTS } from "../../../constants/mock.js";
-import { TabButton } from "../../ui/tab-button/TabButton.jsx";
 import { Container } from "../../ui/container/Container.jsx";
 import classes from "./Nav.module.css"
+import { TabButtonContainer } from "../../ui/tab-button/TabButton-container.jsx";
 
-export const Nav = ({currRestaurant, handleMenuClick}) => {
+export const Nav = ({currId, ids, handleMenuClick}) => {
   return (
     <div>
       <Container>
         <nav className={classes.nav}>
-          {RESTAURANTS.map((restaurant) => (
-            <TabButton
-              key={restaurant.id}
-              isActive={currRestaurant.id === restaurant.id}
-              onClick={() => handleMenuClick(restaurant.id)}>
-              {restaurant.name}
-            </TabButton>)
-          )}
+          {ids.map((id) => <TabButtonContainer key={id} id={id} isActive={currId === id} onClick={handleMenuClick}/>)}
         </nav>
       </Container>
     </div>

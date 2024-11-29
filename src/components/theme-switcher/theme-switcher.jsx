@@ -1,9 +1,8 @@
 import { Button } from "../ui/button/Button.jsx";
-import { useContext } from "react";
-import { ThemeContext } from "../../contexts/theme-context/theme-context.jsx";
+import { useTheme } from "../../contexts/theme-context/use-theme.js";
 
 export const ThemeSwitcher = () => {
-  const { theme, setTheme} = useContext(ThemeContext);
+  const { theme, setTheme} = useTheme();
 
   const switchTheme = () => {
     if (theme === "light") {

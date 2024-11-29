@@ -1,16 +1,15 @@
-import { Dish } from "./dish/Dish.jsx";
 import { NoData } from "../ui/no-data/NoData.jsx";
-import { Review } from "./review/Review.jsx";
 import { ReviewForm } from "./review-form/ReviewForm.jsx";
 import { Text } from "../ui/text/Text.jsx";
 import { Container } from "../ui/container/Container.jsx";
 import classNames from "classnames";
 import classes from "./Restaurant.module.css"
-import { useContext } from "react";
-import { AuthContext } from "../../contexts/auth-context/auth-context.jsx";
+import { useAuth } from "../../contexts/auth-context/use-auth.js";
+import { DishContainer } from "./dish/Dish-container.jsx";
+import { ReviewContainer } from "./review/Review-container.jsx";
 
 export const Restaurant = ({restaurant}) => {
-  const { isLoggedIn} = useContext(AuthContext);
+  const { isLoggedIn} = useAuth();
 
   return (
     <>
@@ -24,7 +23,7 @@ export const Restaurant = ({restaurant}) => {
         <Container>
           <Text type="title" color="primary">Меню</Text>
           {restaurant.menu?.length
-            ? <div className={classes.menu}>{restaurant.menu.map((dish) => (<Dish key={dish.id} dish={dish}/>))}</div>
+            ? <div className={classes.menu}>{restaurant.menu.map((dishId) => (<DishContainer key={dishId} id={dishId}/>))}</div>
             : <NoData/>
           }
         </Container>
@@ -34,8 +33,8 @@ export const Restaurant = ({restaurant}) => {
         <Container>
           <Text type="title" color="primary">Отзывы</Text>
           {restaurant.reviews?.length
-            ? <div className={classes.reviews}>{restaurant.reviews.map((review) => (
-              <Review key={review.id} review={review}/>))}</div>
+            ? <div className={classes.reviews}>{restaurant.reviews.map((reviewId) => (
+              <ReviewContainer key={reviewId} id={reviewId}/>))}</div>
             : <NoData/>
           }
         </Container>

@@ -1,15 +1,14 @@
 import { Text } from "../ui/text/Text.jsx";
 import { Button } from "../ui/button/Button.jsx";
-import { useContext } from "react";
-import { AuthContext } from "../../contexts/auth-context/auth-context.jsx";
 import classes from './Auth.module.css'
+import { useAuth } from "../../contexts/auth-context/use-auth.js";
 
 const USER_MOCK = {
   fullName: 'Иванов Иван Иванович'
 };
 
 export const Auth = () => {
-  const { isLoggedIn, user, login, logout} = useContext(AuthContext);
+  const { isLoggedIn, user, login, logout} = useAuth();
 
   return (
     <>
