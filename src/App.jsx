@@ -1,7 +1,7 @@
 import { Layout } from "./components/layout/Layout.jsx";
 import { Content } from "./components/layout/content/Content.jsx";
-import { AuthContextProvider } from "./contexts/auth-context/auth-context.jsx";
-import { ThemeContextProvide } from "./contexts/theme-context/theme-context.jsx";
+import { AuthContextProvider } from "./contexts/auth-context/auth-context-provider.jsx";
+import { ThemeContextProvide } from "./contexts/theme-context/theme-context-provider.jsx";
 import { Provider } from "react-redux";
 import { store } from "./redux/store.js";
 
