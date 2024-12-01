@@ -1,11 +1,10 @@
 import { DishCounter } from "../dish-counter/DishCounter.jsx";
 import { Text } from "../../ui/text/Text.jsx";
 import classes from "./Dish.module.css";
-import { useContext } from "react";
-import { AuthContext } from "../../../contexts/auth-context/auth-context.jsx";
+import { useAuth } from "../../../contexts/auth-context/use-auth.js";
 
 export const Dish = ({dish}) => {
-  const { isLoggedIn} = useContext(AuthContext);
+  const { isLoggedIn} = useAuth();
 
   return (
     <div className={classes.dish}>

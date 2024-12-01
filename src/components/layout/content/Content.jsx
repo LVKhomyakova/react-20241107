@@ -1,22 +1,24 @@
 import { useState } from "react";
-import { Restaurant } from "../../restaurant/Restaurant.jsx";
-import { RESTAURANTS } from "../../../constants/mock.js";
 import { NoData } from "../../ui/no-data/NoData.jsx";
 import { Nav } from "../nav/Nav.jsx";
+import { useSelector } from "react-redux";
+import { selectRestaurantsIds } from "../../../redux/entities/restaurants/restaurants-slice.js";
+import { RestaurantContainer } from "../../restaurant/Restaurant-container.jsx";
 
 export const Content = () => {
-  const [currRestaurant, setCurrRestaurant] = useState(RESTAURANTS[0]);
+  const restaurantsIds = useSelector(selectRestaurantsIds);
+  const [currRestaurantId, setCurrRestaurantId] = useState(restaurantsIds[0]);
 
   const handleMenuClick = (id) => {
-    if (currRestaurant.id !== id) {
-      setCurrRestaurant(RESTAURANTS.find(item => item.id === id) || undefined);
+    if (currRestaurantId !== id) {
+      setCurrRestaurantId(id);
     }
   }
 
   return (
     <main>
-      <Nav currRestaurant={currRestaurant} handleMenuClick={handleMenuClick} />
-      {currRestaurant ? <Restaurant key={currRestaurant.id} restaurant={currRestaurant}/> : <NoData/>}
+      <Nav currId={currRestaurantId} ids={restaurantsIds} handleMenuClick={handleMenuClick} />
+      {currRestaurantId ? <RestaurantContainer key={currRestaurantId} id={currRestaurantId}/> : <NoData/>}
     </main>
   );
 }
