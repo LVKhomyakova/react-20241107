@@ -6,3 +6,33 @@
   background-color: var(--light-color);
   margin-bottom: 20px;
 }
+
+.review .userInfo {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.review .userInfo .name {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.review .userInfo .image {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 100px;
+  width: 100px;
+}
+
+.review .userInfo .icon::before {
+  position: absolute;
+  content: "\275C\275C";
+  font-size: 4em;
+  line-height: 1;
+  font-weight: 900;
+  top: 0;
+  right: 0;
+}
+

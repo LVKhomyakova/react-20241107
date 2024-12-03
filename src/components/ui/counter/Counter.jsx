@@ -1,19 +1,23 @@
 import classes from './Counter.module.css';
 
-export const Counter = ({value, onChange}) => {
-  const decrease = () => {
-    onChange(value - 1);
+export const Counter = ({value, onChange, increase, decrease}) => {
+  const handleDecrease = (event) => {
+    event.stopPropagation();
+    if (onChange) onChange(value - 1);
+    if (decrease) decrease();
   };
 
-  const increase = () => {
-    onChange(value + 1);
+  const handleIncrease = (event) => {
+    event.stopPropagation();
+    if (onChange) onChange(value + 1);
+    if (increase) increase();
   };
 
   return (
     <div className={classes.counter}>
-      <button type="button" onClick={decrease}>-</button>
+      <button type="button" onClick={handleDecrease}>-</button>
       {value}
-      <button type="button" onClick={increase}>+</button>
+      <button type="button" onClick={handleIncrease}>+</button>
     </div>
   );
 }

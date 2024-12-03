@@ -1,13 +1,27 @@
 .dish {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
   padding: 20px;
+  cursor: pointer;
+}
+.dish .image {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
 }
 
-.dish .block {
+.dish .description {
+  flex-grow: 1;
+}
+
+.dish .description  .block {
   display: flex;
   justify-content: space-between;
 }
 
-.dish .block:first-child {
+.dish .description .block:first-child {
   border-bottom: 1px dashed var(--primary-color);
   margin-bottom: 5px;
   font-size: 24px;

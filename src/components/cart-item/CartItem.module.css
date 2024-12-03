@@ -1,0 +1,30 @@
+.dish {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  margin: 5px 20px;
+}
+.dish .image {
+  border-radius: 8px;
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+}
+.dish .description {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.dish .description .block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+.dish .description .counter {
+  display: flex;
+  justify-content: flex-end;
+}
