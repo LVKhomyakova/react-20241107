@@ -16,16 +16,10 @@ export const CartItem = ({id}) => {
       <img className={classes.image} src={dish.image} alt="dish image"/>
       <div className={classes.description}>
         <div className={classes.block}>
-
-
           <Text type="subtitle" color="dark">{dish.name}</Text>
           <Text type="subtitle" color="primary">{dish.price * count}$</Text>
-
-        {/*</div>*/}
-
-        {/*<div className={classes.counter}>*/}
         </div>
-          <DishCounter id={id}/>
+        <DishCounter id={id}/>
       </div>
     </div>
   );

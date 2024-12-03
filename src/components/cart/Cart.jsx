@@ -10,9 +10,7 @@ export const Cart = () => {
   const items = useSelector(selectCartItems);
   const totalPrice = useSelector(selectCartTotalPrice);
 
-  if (!items.length) {
-    return null;
-  }
+  if (!items.length) return;
 
   return (
     <ContainerWrapper>
