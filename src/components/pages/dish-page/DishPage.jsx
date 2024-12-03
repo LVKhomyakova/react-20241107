@@ -26,7 +26,7 @@ export const DishPage = () => {
 
             <div className={classes.block}>
               <Text>({dish.ingredients.length && dish.ingredients.join(', ')})</Text>
-              {isLoggedIn && <DishCounter/>}
+              {isLoggedIn && <DishCounter id={dish.id}/>}
             </div>
           </div>
         </div>
