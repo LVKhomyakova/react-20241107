@@ -5,28 +5,32 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store.js";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import { RestaurantPage } from "./components/pages/restaurant-page/RestaurantPage.jsx";
-import { DishList } from "./components/restaurant/dish-list/DishList.jsx";
-import { ReviewList } from "./components/restaurant/review-list/ReviewList.jsx";
+import { DishesPage } from "./components/pages/dishes-page/DishesPage.jsx";
+import { ReviewsPage } from "./components/pages/reviews-page/ReviewsPage.jsx";
 import { DishPage } from "./components/pages/dish-page/DishPage.jsx";
-import { HomePage } from "./components/pages/home-page/HomePage.jsx";
+import { RestaurantsPage } from "./components/pages/restaurants-page/RestaurantsPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: <Navigate to="restaurants" replace />,
+  },
+  {
+    path: "/restaurants",
+    element: <RestaurantsPage/>,
     errorElement: <Navigate to='/' />,
     children: [
       {
-        path: "restaurant/:restaurantId",
+        path: "/restaurants/:restaurantId",
         element: <RestaurantPage />,
         children: [
           {
             path: "menu",
-            element: <DishList />,
+            element: <DishesPage />,
           },
           {
             path: "reviews",
-            element: <ReviewList />,
+            element: <ReviewsPage />,
           },
           {
             index: true,

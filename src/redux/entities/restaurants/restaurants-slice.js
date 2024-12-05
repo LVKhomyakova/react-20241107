@@ -27,7 +27,7 @@ export const selectRestaurantMenuItems = createSelector(
       return {
         id,
         name: state.entities[id].name,
-        path: `/restaurant/${id}`,
+        path: `/restaurants/${id}`,
       };
     }
   )

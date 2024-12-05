@@ -3,7 +3,6 @@
   align-items: center;
   column-gap: 20px;
   padding: 20px;
-  cursor: pointer;
 }
 .dish .image {
   border-radius: 50%;

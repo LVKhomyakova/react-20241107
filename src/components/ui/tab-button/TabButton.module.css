@@ -6,7 +6,6 @@
   color: var(--dark-color);
   margin: 0 .5rem;
   padding: .5rem 0;
-  text-decoration: none;
   text-align: center;
 }
 .tab.active {
