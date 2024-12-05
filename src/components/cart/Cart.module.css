@@ -1,0 +1,9 @@
+.cart {
+  border-bottom: 1px dashed var(--primary-color);
+  padding-bottom: 10px;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}

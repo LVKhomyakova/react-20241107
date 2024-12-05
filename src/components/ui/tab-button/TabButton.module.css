@@ -4,9 +4,9 @@
   border-radius: 50rem;
   background-color: var(--light-color);
   color: var(--dark-color);
-  cursor: pointer;
   margin: 0 .5rem;
   padding: .5rem 0;
+  text-align: center;
 }
 .tab.active {
   background-color: var(--primary-color);

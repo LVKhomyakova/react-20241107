@@ -1,20 +1,21 @@
 import classNames from 'classnames';
 import classes from './TabButton.module.css';
 import { useTheme } from "../../../contexts/theme-context/use-theme.js";
+import { NavLink } from "react-router-dom";
 
-export const TabButton = ({isActive, children, onClick}) => {
+export const TabButton = ({path, children}) => {
   const {theme} = useTheme();
 
   return (
-    <button
+    <NavLink
+      to={path}
       className={
-        classNames(classes.tab, {
+        ({ isActive }) => classNames(classes.tab, {
           [classes.active]: isActive,
           [classes.dark]: theme === 'dark'
         })
-      }
-      onClick={onClick}>
+      }>
       {children}
-    </button>
+    </NavLink>
   );
 }
