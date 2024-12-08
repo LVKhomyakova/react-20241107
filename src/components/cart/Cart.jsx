@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectCartItems, selectCartTotalPrice } from "../../redux/cart/cart-slice.js";
+import { selectCartItems, selectCartTotalPrice } from "../../redux/ui/cart/cart-slice.js";
 import { CartItem } from "../cart-item/CartItem.jsx";
 import { ContainerWrapper } from "../ui/container-wrapper/ContainerWrapper.jsx";
 import { Container } from "../ui/container/Container.jsx";

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AuthContext } from "./auth-context.js";
 import { useDispatch } from "react-redux";
-import { clearCart } from "../../redux/cart/cart-slice.js";
+import { clearCart } from "../../redux/ui/cart/cart-slice.js";
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);

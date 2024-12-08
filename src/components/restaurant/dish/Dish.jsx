@@ -3,6 +3,7 @@ import { DishCounter } from "../dish-counter/DishCounter.jsx";
 import { Text } from "../../ui/text/Text.jsx";
 import { useAuth } from "../../../contexts/auth-context/use-auth.js";
 import classes from "./Dish.module.css";
+import { BASE_URL } from "../../../constants/api.js";
 
 export const Dish = ({dish}) => {
   const {isLoggedIn} = useAuth();
@@ -10,7 +11,7 @@ export const Dish = ({dish}) => {
   return (
     <Link to={`/dish/${dish.id}`}>
       <div className={classes.dish}>
-        <img className={classes.image} src={dish.image} alt="dish image"/>
+        <img className={classes.image} src={`${BASE_URL}/${dish.image}`} alt="dish image"/>
 
         <div className={classes.description}>
           <div className={classes.block}>

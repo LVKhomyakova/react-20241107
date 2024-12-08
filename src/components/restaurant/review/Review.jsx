@@ -2,13 +2,14 @@ import { Text } from "../../ui/text/Text.jsx";
 import classes from './Review.module.css';
 import { useSelector } from "react-redux";
 import { selectUserById } from "../../../redux/entities/users/users-slice.js";
+import { BASE_URL } from "../../../constants/api.js";
 
 export const Review = ({review}) => {
   const user = useSelector((state) => selectUserById(state, review.userId));
   return (
     <div className={classes.review}>
       <div className={classes.userInfo}>
-        <img className={classes.image} src={user.image} alt="user image"/>
+        <img className={classes.image} src={`${BASE_URL}/${user.image}`} alt="user image"/>
         <i className={classes.icon}></i>
         <div className={classes.name}>
           <Text type="subtitle" color="dark">{user.name}</Text>
