@@ -1,20 +1,24 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { normalizedDishes } from "../../../constants/normalized-mock.js";
+import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
+import { getDishes } from "./get-dishes.js";
+import { getDish } from "./get-dish.js";
 
-const initialState = {
-  entities: normalizedDishes.reduce((acc, dish )=> {
-    acc[dish.id] = dish;
-    return acc;
-  }, {}),
-  ids: normalizedDishes.map((dish) => dish.id),
-};
+const entityAdapter = createEntityAdapter();
 
 export const dishesSlice = createSlice({
   name: "dishes",
-  initialState,
+  initialState: entityAdapter.getInitialState({requestStatus: ''}),
   selectors: {
     selectDishesIds: (state) => state.ids,
     selectDishById: (state, id) => state.entities[id],
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getDishes.fulfilled, (state, {payload}) => {
+        entityAdapter.setMany(state, payload);
+      })
+      .addCase(getDish.fulfilled, (state, {payload}) => {
+        entityAdapter.setOne(state, payload);
+      })
   }
 });
 

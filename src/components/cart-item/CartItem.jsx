@@ -3,7 +3,8 @@ import { Text } from "../ui/text/Text.jsx";
 import { useSelector } from "react-redux";
 import { selectDishById } from "../../redux/entities/dishes/dishes-slice.js";
 import classes from "./CartItem.module.css";
-import { selectCartItemCountById } from "../../redux/cart/cart-slice.js";
+import { selectCartItemCountById } from "../../redux/ui/cart/cart-slice.js";
+import { BASE_URL } from "../../constants/api.js";
 
 export const CartItem = ({id}) => {
   const dish = useSelector((state) => selectDishById(state, id));
@@ -13,7 +14,7 @@ export const CartItem = ({id}) => {
 
   return (
     <div className={classes.dish}>
-      <img className={classes.image} src={dish.image} alt="dish image"/>
+      <img className={classes.image} src={`${BASE_URL}/${dish.image}`} alt="dish image"/>
       <div className={classes.description}>
         <div className={classes.block}>
           <Text type="subtitle" color="dark">{dish.name}</Text>
