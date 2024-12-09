@@ -7,6 +7,9 @@
 .light{
   color: var(--light-color);
 }
+.error{
+  color: var(--red-color);
+}
 
 .primary {
   color: var(--primary-color);

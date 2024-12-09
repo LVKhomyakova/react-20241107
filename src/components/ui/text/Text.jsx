@@ -20,6 +20,7 @@ export const Text = ({children, type='default', color = 'default'}) => {
       [classes.primary]: color === 'primary',
       [classes.dark]: color === 'dark',
       [classes.light]: color === 'light',
+      [classes.error]: color === 'error',
     })}>
       {children}
     </TextTag>
