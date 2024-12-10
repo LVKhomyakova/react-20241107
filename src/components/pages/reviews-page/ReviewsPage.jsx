@@ -29,6 +29,8 @@ export const ReviewsPage = () => {
   useEffect(() => {
     if (user?.id && !isReviewsFetching && reviews.length > 0) {
       setCurrReview(reviews.find(review => review.userId === user.id) || null);
+    } else {
+      setCurrReview(null);
     }
   }, [isReviewsFetching, reviews, user?.id]);
 
