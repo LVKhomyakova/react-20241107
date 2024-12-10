@@ -40,15 +40,10 @@ export const useReviewForm = () => {
     dispatch({ type: RESET_FORM });
   }
 
-  const setValue = (review) => {
-    dispatch({ type: SET_VALUE, payload: review });
-  }
-
   return {
     state,
     setText,
     setRating,
     resetForm,
-    setValue
   }
 }
