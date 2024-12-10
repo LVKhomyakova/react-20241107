@@ -12,7 +12,6 @@ const SET_NAME = "SET_NAME";
 const SET_TEXT = "SET_TEXT";
 const SET_RATING = "SET_RATING";
 const RESET_FORM = "RESET_FORM";
-const SET_VALUE = "SET_VALUE";
 
 const reviewReducer = (state, { type, payload }) => {
   switch (type) {
@@ -20,7 +19,6 @@ const reviewReducer = (state, { type, payload }) => {
     case SET_TEXT: return {...state, text: payload};
     case SET_RATING: return {...state, rating: payload};
     case RESET_FORM: return DEFAULT_REVIEW;
-    case SET_VALUE: return {...state, ...payload };
     default: return state;
   }
 }
