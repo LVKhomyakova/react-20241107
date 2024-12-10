@@ -11,8 +11,11 @@ export const cartSlice = createSlice({
     };
     },
     removeCartItem: (state, {payload}) => {
-      if (state[payload] > 1) {
-        state[payload] = state[payload] - 1;
+      if (state[payload].count > 1) {
+        state[payload] = {
+          ...state[payload],
+          count: state[payload]?.count - 1
+        };
         return;
       }
       delete state[payload];
