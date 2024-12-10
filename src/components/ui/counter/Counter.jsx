@@ -1,6 +1,6 @@
 import classes from './Counter.module.css';
 
-export const Counter = ({value, onChange, increase, decrease}) => {
+export const Counter = ({value = 0, onChange, increase, decrease}) => {
   const handleDecrease = (event) => {
     event.stopPropagation();
     event.preventDefault()

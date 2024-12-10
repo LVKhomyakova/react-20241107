@@ -1,5 +1,5 @@
 .review {
-  width: 400px;
+  width: 373px;
   border: 1px solid var(--primary-color);
   padding: 20px 20px;
   border-radius: 8px;
@@ -36,3 +36,8 @@
   right: 0;
 }
 
+.review .rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

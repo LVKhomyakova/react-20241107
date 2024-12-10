@@ -1,28 +1,23 @@
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { Container } from "../../ui/container/Container.jsx";
 import { Text } from "../../ui/text/Text.jsx";
-import { DishContainer } from "../../restaurant/dish/Dish-container.jsx";
 import { NoData } from "../../ui/no-data/NoData.jsx";
-import { selectRestaurantMenuById } from "../../../redux/entities/restaurants/restaurants-slice.js";
 import { ContainerWrapper } from "../../ui/container-wrapper/ContainerWrapper.jsx";
 import classes from "./DishesPage.module.css";
-import { useRequest } from "../../../redux/ui/request/use-request.js";
-import { REQUEST_STATUS } from "../../../constants/request-statuses.js";
 import { Loader } from "../../ui/loader/loader.jsx";
 import { Error } from "../../ui/error/Error.jsx";
-import { getDishes } from "../../../redux/entities/dishes/get-dishes.js";
+import { useGetDishesByRestaurantIdQuery } from "../../../redux/services/api/index.js";
+import { Dish } from "../../restaurant/dish/Dish.jsx";
 
 export const DishesPage = () => {
   const {restaurantId} = useParams();
-  const menu = useSelector((state) => selectRestaurantMenuById(state, restaurantId));
-  const requestStatus = useRequest(getDishes, restaurantId);
+  const {data: menu, isLoading, isError} = useGetDishesByRestaurantIdQuery(restaurantId);
 
-  if (requestStatus === REQUEST_STATUS.pending) {
+  if (isLoading) {
     return <Loader/>;
   }
 
-  if (requestStatus === REQUEST_STATUS.rejected) {
+  if (isError) {
     return <Error message="Меню не найдено."/>;
   }
 
@@ -34,9 +29,9 @@ export const DishesPage = () => {
         {menu?.length
           ? <ul className={classes.menu}>
               {
-                menu.map((dishId) => (
-                  <li key={dishId}>
-                    <DishContainer id={dishId}/>
+                menu.map((dish) => (
+                  <li key={dish.id}>
+                    <Dish dish={dish}/>
                   </li>
                 ))
               }

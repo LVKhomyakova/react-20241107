@@ -5,7 +5,10 @@ export const cartSlice = createSlice({
   initialState: {},
   reducers: {
     addCartItem: (state, {payload}) => {
-      state[payload] = (state[payload] || 0) + 1;
+      state[payload.id] = {
+        count: (state[payload.id]?.count || 0) + 1,
+        price: payload.price,
+    };
     },
     removeCartItem: (state, {payload}) => {
       if (state[payload] > 1) {
@@ -30,16 +33,18 @@ export const selectCartItems = createSelector(
   }, [])
 );
 
-
-export const selectDishesSlice = (state) => state.dishes;
 export const selectCartTotalPrice = createSelector(
-  [selectCartSlice,selectDishesSlice],
-  (cartState, dishesState) => Object.keys(cartState).reduce((acc, id) => {
-    acc+=cartState[id]*dishesState.entities[id].price;
+  [selectCartSlice],
+  (cartState) => Object.keys(cartState).reduce((acc, id) => {
+    acc+= cartState[id].count * cartState[id].price;
     return acc;
   }, 0)
 );
 
 export const { selectCartItemCountById } = cartSlice.selectors;
-export const { addCartItem, removeCartItem, clearCart } = cartSlice.actions;
+export const {
+  addCartItem,
+  removeCartItem,
+  clearCart
+} = cartSlice.actions;
 

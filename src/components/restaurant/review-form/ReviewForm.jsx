@@ -4,9 +4,17 @@ import { Button } from "../../ui/button/Button.jsx";
 import { Input } from "../../ui/input/Input.jsx";
 import classes from "./ReviewForm.module.css";
 import bgForm from "../../../assets/images/bg-form.png";
+import { useEffect } from "react";
 
-export const ReviewForm = () => {
-  const {state, setName, setText, setRating, resetForm} = useReviewForm();
+export const ReviewForm = ({value, onSubmit, user}) => {
+  const {state, setText, setRating, resetForm} = useReviewForm();
+
+  useEffect(() => {
+    if (value) {
+      setText(value.text);
+      setRating(value.rating);
+    }
+  }, [setText, setRating, value]);
 
   return (
     <div className={classes.formWrapper}>
@@ -15,12 +23,7 @@ export const ReviewForm = () => {
         <div className={classes.group}>
           <div className={classes.control}>
             <label htmlFor="name">Имя:</label>
-            <Input
-              id="name"
-              type="text"
-              value={state.name}
-              onChange={e => setName(e.target.value)}
-            />
+            <Input id="name" type="text" value={user.name} disabled/>
           </div>
 
           <div className={classes.control}>
@@ -39,8 +42,9 @@ export const ReviewForm = () => {
           </div>
         </div>
 
-        <div>
+        <div className={classes.actions}>
           <Button onClick={resetForm}>Очистить</Button>
+          <Button onClick={() => onSubmit(state)}>Сохранить</Button>
         </div>
       </form>
       <img src={bgForm} alt="фон"/>
