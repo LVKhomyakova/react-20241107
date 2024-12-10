@@ -63,7 +63,7 @@ export const ReviewsPage = () => {
                 {
                   reviews.map((review) => (
                     <li key={review.id}>
-                      <Review review={review} onEdit={(review) => setCurrReview({...review})}/>
+                      <Review review={review}/>
                     </li>
                   ))
                 }
