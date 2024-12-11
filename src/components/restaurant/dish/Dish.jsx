@@ -21,7 +21,7 @@ export const Dish = ({dish}) => {
 
           <div className={classes.block}>
             <Text>({dish.ingredients.length && dish.ingredients.join(', ')})</Text>
-            {isLoggedIn && <DishCounter id={dish.id}/>}
+            {isLoggedIn && <DishCounter dish={dish}/>}
           </div>
         </div>
       </div>

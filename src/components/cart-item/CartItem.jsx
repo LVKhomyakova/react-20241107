@@ -1,14 +1,14 @@
 import { DishCounter } from "../restaurant/dish-counter/DishCounter.jsx";
 import { Text } from "../ui/text/Text.jsx";
 import { useSelector } from "react-redux";
-import { selectDishById } from "../../redux/entities/dishes/dishes-slice.js";
 import classes from "./CartItem.module.css";
 import { selectCartItemCountById } from "../../redux/ui/cart/cart-slice.js";
 import { BASE_URL } from "../../constants/api.js";
+import { useGetDishByIdQuery } from "../../redux/services/api/index.js";
 
 export const CartItem = ({id}) => {
-  const dish = useSelector((state) => selectDishById(state, id));
-  const count = useSelector((state) => selectCartItemCountById(state, id)) || 0;
+  const {data: dish} = useGetDishByIdQuery(id)
+  const {count} = useSelector((state) => selectCartItemCountById(state, id)) || 0;
 
   if (!dish) return;
 
@@ -20,7 +20,7 @@ export const CartItem = ({id}) => {
           <Text type="subtitle" color="dark">{dish.name}</Text>
           <Text type="subtitle" color="primary">{dish.price * count}$</Text>
         </div>
-        <DishCounter id={id}/>
+        <DishCounter dish={dish}/>
       </div>
     </div>
   );

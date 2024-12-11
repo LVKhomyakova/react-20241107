@@ -1,10 +1,9 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 
 const MIN_RATING = 0;
 const MAX_RATING = 5;
 
 const DEFAULT_REVIEW = {
-  name: '',
   text: '',
   rating: 0,
 };
@@ -24,29 +23,32 @@ const reviewReducer = (state, { type, payload }) => {
   }
 }
 
-export const useReviewForm = () => {
-  const [state, dispatch] = useReducer(reviewReducer, DEFAULT_REVIEW);
+export const useReviewForm = (value) => {
+  const [state, dispatch] = useReducer(reviewReducer, {...DEFAULT_REVIEW});
 
-  const setName = (name) => {
-    dispatch({ type: SET_NAME, payload: name });
-  }
+  useEffect(() => {
+    if (value) {
+      setText(value.text);
+      setRating(value.rating);
+    }
+  }, [value]);
+
   const setText = (text) => {
     dispatch({ type: SET_TEXT, payload: text });
-  }
+  };
   const setRating = (rating) => {
     if (rating >= MIN_RATING && rating <= MAX_RATING) {
       dispatch({ type: SET_RATING, payload: rating });
     }
-  }
+  };
   const resetForm = () => {
     dispatch({ type: RESET_FORM });
   }
 
   return {
     state,
-    setName,
     setText,
     setRating,
-    resetForm
+    resetForm,
   }
 }

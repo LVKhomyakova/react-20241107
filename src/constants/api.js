@@ -11,6 +11,8 @@ export const API = {
   },
   reviews: {
     getList: (restaurantId) =>  '/api/reviews?restaurantId=' + restaurantId,
+    addReview: (restaurantId) => '/api/review/' + restaurantId,
+    updateReview: (reviewId) => '/api/review/' + reviewId,
   },
   users: {
     getList: '/api/users/'
