@@ -4,17 +4,9 @@ import { Button } from "../../ui/button/Button.jsx";
 import { Input } from "../../ui/input/Input.jsx";
 import classes from "./ReviewForm.module.css";
 import bgForm from "../../../assets/images/bg-form.png";
-import { useEffect } from "react";
 
 export const ReviewForm = ({value, onSubmit, user}) => {
-  const {state, setText, setRating, resetForm} = useReviewForm();
-
-  useEffect(() => {
-    if (value) {
-      setText(value.text);
-      setRating(value.rating);
-    }
-  }, [setText, setRating, value]);
+  const {state, setText, setRating, resetForm} = useReviewForm(value);
 
   return (
     <div className={classes.formWrapper}>

@@ -1,4 +1,4 @@
-import { useCallback, useReducer } from "react";
+import { useEffect, useReducer } from "react";
 
 const MIN_RATING = 0;
 const MAX_RATING = 5;
@@ -23,17 +23,24 @@ const reviewReducer = (state, { type, payload }) => {
   }
 }
 
-export const useReviewForm = () => {
+export const useReviewForm = (value) => {
   const [state, dispatch] = useReducer(reviewReducer, {...DEFAULT_REVIEW});
 
-  const setText = useCallback((text) => {
+  useEffect(() => {
+    if (value) {
+      setText(value.text);
+      setRating(value.rating);
+    }
+  }, [value]);
+
+  const setText = (text) => {
     dispatch({ type: SET_TEXT, payload: text });
-  },[])
-  const setRating = useCallback((rating) => {
+  };
+  const setRating = (rating) => {
     if (rating >= MIN_RATING && rating <= MAX_RATING) {
       dispatch({ type: SET_RATING, payload: rating });
     }
-  },[])
+  };
   const resetForm = () => {
     dispatch({ type: RESET_FORM });
   }
