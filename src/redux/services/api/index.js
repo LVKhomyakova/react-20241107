@@ -16,7 +16,7 @@ export const apiSlice = createApi({
     }),
     getReviewsByRestaurantId: build.query({
       query: (restaurantId) => API.reviews.getList(restaurantId),
-      providesTags: (restaurantId) => [{type: 'Reviews', restaurantId}]
+      providesTags: (result, error, restaurantId) => [{type: 'Reviews', restaurantId}]
     }),
     getUsers: build.query({
       query: () => API.users.getList,
@@ -30,7 +30,7 @@ export const apiSlice = createApi({
         method: "POST",
         body: review
       }),
-      invalidatesTags: ({restaurantId}) => [{type: 'Reviews', restaurantId}]
+      invalidatesTags: (result, error, {restaurantId}) => [{type: 'Reviews', restaurantId}]
     }),
     updateReview: build.mutation({
       query: ({reviewId, review}) => ({
@@ -38,7 +38,7 @@ export const apiSlice = createApi({
         method: 'PATCH',
         body: review
       }),
-      invalidatesTags: ({restaurantId}) => [{type: 'Reviews', restaurantId}]
+      invalidatesTags: (result, error, {reviewId}) => [{type: 'Reviews', reviewId}]
     })
   })
 });
