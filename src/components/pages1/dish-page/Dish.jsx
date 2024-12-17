@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+'use client';
 import { Text } from "../../ui/text/Text.jsx";
 import { DishCounter } from "../../restaurant/dish-counter/DishCounter.jsx";
 import { useAuth } from "../../../contexts/auth-context/use-auth.js";
@@ -9,8 +9,9 @@ import { BASE_URL } from "../../../constants/api.js";
 import { Loader } from "../../ui/loader/loader.jsx";
 import { Error } from "../../ui/error/Error.jsx";
 import { useGetDishByIdQuery } from "../../../redux/services/api/index.js";
+import { useParams } from "next/navigation";
 
-export const DishPage = () => {
+export const Dish = () => {
   const {isLoggedIn} = useAuth();
   const {dishId} = useParams();
   const {data: dish, isLoading, isError} = useGetDishByIdQuery(dishId);

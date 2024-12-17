@@ -1,3 +1,4 @@
+'use client';
 import { Header } from "./header/Header.jsx";
 import { Footer } from "./footer/Footer.jsx";
 import { ScrollProgress } from "../ui/scroll-progress/ScrollProgress.jsx";

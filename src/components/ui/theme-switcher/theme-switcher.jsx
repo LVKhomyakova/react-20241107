@@ -1,5 +1,6 @@
-import { Button } from "../ui/button/Button.jsx";
-import { useTheme } from "../../contexts/theme-context/use-theme.js";
+'use client';
+import { Button } from "../button/Button.jsx";
+import { useTheme } from "../../../contexts/theme-context/use-theme.js";
 
 export const ThemeSwitcher = () => {
   const { theme, setTheme} = useTheme();

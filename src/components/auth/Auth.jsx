@@ -1,3 +1,4 @@
+'use client';
 import { Text } from "../ui/text/Text.jsx";
 import { Button } from "../ui/button/Button.jsx";
 import classes from './Auth.module.css'
