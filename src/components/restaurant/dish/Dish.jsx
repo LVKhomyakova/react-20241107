@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+'use client';
+import Link from "next/link";
 import { DishCounter } from "../dish-counter/DishCounter.jsx";
 import { Text } from "../../ui/text/Text.jsx";
 import { useAuth } from "../../../contexts/auth-context/use-auth.js";
@@ -9,7 +10,7 @@ export const Dish = ({dish}) => {
   const {isLoggedIn} = useAuth();
 
   return (
-    <Link to={`/dish/${dish.id}`}>
+    <Link href={`/dish/${dish.id}`}>
       <div className={classes.dish}>
         <img className={classes.image} src={`${BASE_URL}/${dish.image}`} alt="dish image"/>
 

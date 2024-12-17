@@ -1,16 +1,16 @@
+'use client';
 import { useReviewForm } from "./useReviewForm.jsx";
 import { Counter } from "../../ui/counter/Counter.jsx";
 import { Button } from "../../ui/button/Button.jsx";
 import { Input } from "../../ui/input/Input.jsx";
 import classes from "./ReviewForm.module.css";
-import bgForm from "../../../assets/images/bg-form.png";
 
 export const ReviewForm = ({value, onSubmit, user}) => {
   const {state, setText, setRating, resetForm} = useReviewForm(value);
 
   return (
     <div className={classes.formWrapper}>
-      <img src={bgForm} alt="фон"/>
+      <img src="/assets/images/bg-form.png" alt="фон"/>
       <form className={classes.form}>
         <div className={classes.group}>
           <div className={classes.control}>
@@ -39,7 +39,7 @@ export const ReviewForm = ({value, onSubmit, user}) => {
           <Button onClick={() => onSubmit(state)}>Сохранить</Button>
         </div>
       </form>
-      <img src={bgForm} alt="фон"/>
+      <img src="/assets/images/bg-form.png" alt="фон"/>
     </div>
   )
 }

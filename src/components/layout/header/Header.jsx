@@ -2,7 +2,7 @@ import { Container } from "../../ui/container/Container.jsx";
 import classes from './Header.module.css'
 import { Text } from "../../ui/text/Text.jsx";
 import { Auth } from "../../auth/Auth.jsx";
-import { ThemeSwitcher } from "../../theme-switcher/theme-switcher.jsx";
+import { ThemeSwitcher } from "../../ui/theme-switcher/theme-switcher.jsx";
 
 export const Header = () => {
   return (
