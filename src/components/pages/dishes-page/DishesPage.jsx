@@ -10,7 +10,7 @@ import { useGetDishesByRestaurantIdQuery } from "../../../redux/services/api/ind
 import { Dish } from "../../restaurant/dish/Dish.jsx";
 import { useParams } from "next/navigation";
 
-export const Dishes = () => {
+export const DishesPage = () => {
   const {restaurantId} = useParams();
   const {data: menu, isLoading, isError} = useGetDishesByRestaurantIdQuery(restaurantId);
 

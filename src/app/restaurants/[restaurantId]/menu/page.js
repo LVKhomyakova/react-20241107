@@ -1,5 +1,3 @@
-import { Dishes } from "../../../../components/pages1/dishes-page/Dishes.jsx";
+import { DishesPage } from "../../../../components/pages/dishes-page/DishesPage.jsx";
 
-export default function MenuPage() {
-  return <Dishes/>;
-}
+export default DishesPage;

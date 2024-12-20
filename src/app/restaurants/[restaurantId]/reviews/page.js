@@ -1,5 +1,3 @@
-import { Reviews } from "../../../../components/pages1/reviews-page/Reviews.jsx";
+import { ReviewsPage } from "../../../../components/pages/reviews-page/ReviewsPage.jsx";
 
-export default function ReviewsPage() {
-  return <Reviews/>;
-}
+export default ReviewsPage;

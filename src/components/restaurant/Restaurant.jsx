@@ -1,4 +1,3 @@
-import { Outlet } from "react-router-dom";
 import { Text } from "../ui/text/Text.jsx";
 import { Container } from "../ui/container/Container.jsx";
 import { RestaurantNav } from "./restaurant-nav/RestaurantNav.jsx";
@@ -20,7 +19,6 @@ export const Restaurant = ({restaurant}) => {
       <ContainerWrapper type="primary">
         <RestaurantNav/>
       </ContainerWrapper>
-      <Outlet/>
     </>
   );
 }

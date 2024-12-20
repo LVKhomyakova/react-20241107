@@ -11,7 +11,7 @@ import { Error } from "../../ui/error/Error.jsx";
 import { useGetDishByIdQuery } from "../../../redux/services/api/index.js";
 import { useParams } from "next/navigation";
 
-export const Dish = () => {
+export const DishPage = () => {
   const {isLoggedIn} = useAuth();
   const {dishId} = useParams();
   const {data: dish, isLoading, isError} = useGetDishByIdQuery(dishId);

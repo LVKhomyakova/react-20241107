@@ -1,13 +1,3 @@
-import { ContainerWrapper } from "../../components/ui/container-wrapper/ContainerWrapper.jsx";
-import { RestaurantsNav } from "../../components/restaurant/restaurants-nav/RestaurantsNav.jsx";
+import RestaurantsLayout from "../../components/pages/restaurants-page/RestaurantsLayout.js";
 
-export default function RestaurantLayout({ children }) {
-  return (
-    <main>
-      <ContainerWrapper>
-        <RestaurantsNav/>
-      </ContainerWrapper>
-      { children }
-    </main>
-  );
-}
+export default RestaurantsLayout;

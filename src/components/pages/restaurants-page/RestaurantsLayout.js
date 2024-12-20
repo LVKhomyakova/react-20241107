@@ -1,15 +1,13 @@
-'use client';
-import { Outlet } from "react-router-dom";
-import { RestaurantsNav } from "../../restaurant/restaurants-nav/RestaurantsNav.jsx";
 import { ContainerWrapper } from "../../ui/container-wrapper/ContainerWrapper.jsx";
+import { RestaurantsNav } from "../../restaurant/restaurants-nav/RestaurantsNav.jsx";
 
-export const Restaurants = () => {
+export default function RestaurantsLayout({children}) {
   return (
     <main>
       <ContainerWrapper>
         <RestaurantsNav/>
       </ContainerWrapper>
-      <Outlet/>
+      { children }
     </main>
   );
 }

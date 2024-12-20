@@ -18,7 +18,7 @@ import { Error } from "../../ui/error/Error.jsx";
 import { Review } from "../../restaurant/review/Review.jsx";
 import { useParams } from "next/navigation";
 
-export const Reviews = () => {
+export const ReviewsPage = () => {
   const [currReview, setCurrReview] = useState();
   const {isLoggedIn, user} = useAuth();
   const {restaurantId} = useParams();
