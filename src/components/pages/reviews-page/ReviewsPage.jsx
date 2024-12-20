@@ -1,5 +1,5 @@
+'use client';
 import { useCallback, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { Container } from "../../ui/container/Container.jsx";
 import { Text } from "../../ui/text/Text.jsx";
 import { NoData } from "../../ui/no-data/NoData.jsx";
@@ -16,6 +16,7 @@ import {
 import { Loader } from "../../ui/loader/loader.jsx";
 import { Error } from "../../ui/error/Error.jsx";
 import { Review } from "../../restaurant/review/Review.jsx";
+import { useParams } from "next/navigation";
 
 export const ReviewsPage = () => {
   const [currReview, setCurrReview] = useState();

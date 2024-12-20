@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+'use client';
 import { Container } from "../../ui/container/Container.jsx";
 import { Text } from "../../ui/text/Text.jsx";
 import { NoData } from "../../ui/no-data/NoData.jsx";
@@ -8,6 +8,7 @@ import { Loader } from "../../ui/loader/loader.jsx";
 import { Error } from "../../ui/error/Error.jsx";
 import { useGetDishesByRestaurantIdQuery } from "../../../redux/services/api/index.js";
 import { Dish } from "../../restaurant/dish/Dish.jsx";
+import { useParams } from "next/navigation";
 
 export const DishesPage = () => {
   const {restaurantId} = useParams();

@@ -1,3 +1,4 @@
+'use client';
 import { useState } from "react";
 import { AuthContext } from "./auth-context.js";
 import { useDispatch } from "react-redux";
